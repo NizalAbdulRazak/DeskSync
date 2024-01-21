@@ -19,11 +19,14 @@ class socket_code:
         
         while True:
             try:
+                print("trying to connect")
                 client.connect((ip, port))
+                print("connected")
                 thr.start()
                 socket_code.send_image(client)
                 break
-            except ConnectionRefusedError:
+            except ConnectionRefusedError as e:
+                print(e)
                 pass
 
     def send_image(client):

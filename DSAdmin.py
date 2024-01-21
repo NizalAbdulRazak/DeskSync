@@ -52,7 +52,7 @@ def handler(conn, addr):
             cv2.setMouseCallback("frame", click_event)
             cv2.waitKey(1)
     except ConnectionResetError:
-        cv2.destroyAllWindows()
+        # cv2.destroyAllWindows()
         start_server()
 
 def start_server():
